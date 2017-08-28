@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Robo Profiles</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+ </head>
+ <body>
+   <div class="links">
+     <a href="unemployed" class="unemployed">Robots Looking for Work</a>
+     <a href="employed" class="employed">Working Robots</a>
+   </div>
+   <div id="user_profiles">
+     {{#robots}}
+     <div class="profile">
+       <div class="profile_img">
+        <img src="{{avatar}}" />
+       </div>
+        <a href="{{username}}">{{name}}</a>
+       {{#job}}
+        <p>{{job}} @ {{company}}</p>
+       {{/job}}
+       {{^job}}
+        <div class="available">
+          <p>Available for hire</p>
+        </div>
+       {{/job}}
+      </div>
+     {{/robots}}
+   </div>
+ </body>
+</html>

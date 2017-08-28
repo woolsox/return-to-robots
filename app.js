@@ -11,6 +11,26 @@ app.set('views', './views');
 app.set('view engine', 'mustache');
 app.use(express.static(__dirname + '/public'));
 
+
+app.use('/employed', function (req, res) {
+  MongoClient.connect(mongoURL, function (err, db) {
+    const robots = db.collection('robots');
+    robots.find({job: {$not: {$in: [null]}}}).toArray(function (err, docs) {
+      res.render('employed', {robots: docs});
+    });
+  });
+});
+
+
+app.use('/unemployed', function (req, res) {
+  MongoClient.connect(mongoURL, function (err, db) {
+    const robots = db.collection('robots');
+    robots.find({job: null}).toArray(function (err, docs) {
+      res.render('unemployed', {robots: docs});
+    });
+  });
+});
+
 app.use('/:username', function (req, res) {
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');

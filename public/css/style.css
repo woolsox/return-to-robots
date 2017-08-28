@@ -4,6 +4,12 @@
  font-family: Helvetica, sans-serif;
 }
 
+/* HEADER LINKS */
+
+.links {
+ text-align: center;
+}
+
 /* USER INDEX STYLING */
 
 #user_profiles {

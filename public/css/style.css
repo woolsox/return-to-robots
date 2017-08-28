@@ -10,6 +10,14 @@
  text-align: center;
 }
 
+.links a {
+ margin: 5px 10px;
+}
+
+h1 {
+ text-align: center;
+}
+
 /* USER INDEX STYLING */
 
 #user_profiles {
@@ -52,6 +60,7 @@
 /* USER PAGE STYLING */
 
 #profile {
+ margin-top: 10px;
  display: flex;
  justify-content: center;
 }
